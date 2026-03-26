@@ -1,5 +1,5 @@
-# Use Java 17 (working image)
-FROM eclipse-temurin:17-jdk
+# Use Java 21 (working image)
+FROM eclipse-temurin:21-jdk
 
 # Set working directory
 WORKDIR /app
