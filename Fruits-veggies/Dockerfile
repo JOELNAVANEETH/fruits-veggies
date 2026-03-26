@@ -1,20 +1,20 @@
-# Use Java 17
-FROM openjdk:17-jdk-slim
+# Use Java 17 (working image)
+FROM eclipse-temurin:17-jdk
 
 # Set working directory
 WORKDIR /app
 
-# Copy all files
+# Copy files
 COPY . .
 
-# Give permission to mvnw
+# Give permission
 RUN chmod +x mvnw
 
-# Build the project
+# Build project
 RUN ./mvnw clean package -DskipTests
 
 # Expose port
 EXPOSE 8080
 
-# Run the app
+# Run app
 CMD ["sh", "-c", "java -jar target/*.jar"]
